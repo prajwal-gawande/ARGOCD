@@ -20,6 +20,5 @@ spec:
         #image: veeranarni/hotstar:latest
         image: 533267069217.dkr.ecr.us-east-1.amazonaws.com/prajwal
         imagePullPolicy: "Always"
-        ports:
-        - containerport: 5000
+  
         
