@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: hotstar
+        app: hotsta
     spec:
       containers:
       - name: hotstar-container
