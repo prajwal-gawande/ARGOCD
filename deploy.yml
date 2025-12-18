@@ -1,26 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: swiggy-app
-  labels:
-    app: swiggy-app
+  name: hotstar-deployment
 spec:
-  replicas: 5
+  replicas: 2
   selector:
     matchLabels:
-      app: swiggy-app
+      app: hotstar
   template:
     metadata:
       labels:
-        app: swiggy-app
+        app: hotstar
     spec:
-      terminationGracePeriodSeconds: 30
       containers:
-      - name: swiggy-ap
-        #image: veeranarni/hotstar:latest
+      - name: hotstar-container
         image: 113889330192.dkr.ecr.us-east-1.amazonaws.com/prajwal
-        imagePullPolicy: "Always"
-        apiVersion: v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
 kind: Service
 metadata:
   name: hotstar-lb
