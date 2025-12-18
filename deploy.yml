@@ -20,3 +20,14 @@ spec:
         #image: veeranarni/hotstar:latest
         image: 113889330192.dkr.ecr.us-east-1.amazonaws.com/prajwal
         imagePullPolicy: "Always"
+        apiVersion: v1
+kind: Service
+metadata:
+  name: hotstar-lb
+spec:
+  type: LoadBalancer
+  selector:
+    app: hotstar
+  ports:
+  - port: 80
+    targetPort: 3000
